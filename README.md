@@ -1,4 +1,4 @@
-<img src="githubanner.jpg" width="100%"/>
+<img src="githubanner.jpg"/>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/saumyadipjana2003/" target="_blank">
