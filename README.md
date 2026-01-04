@@ -58,8 +58,17 @@
 
 <div align="center"> 
 
-![Dip's GitHub stats](https://github-readme-stats.vercel.app/api?username=dip-bash&show_icons=true&bg_color=000000&title_color=ffffff&icon_color=ffffff&text_color=ffffff&card_width=350)  ![](https://nirzak-streak-stats.vercel.app/?user=dip-bash&theme=dark&background=000000&hide_border=false&sideNums=ffffff&currStreakNum=ffffff&fire=ffffff&ring=ffffff&stroke=fffffff&currStreakLabel=ffffff&card_width=401)<br/><br/>
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=dip-bash&bg_color=000000&color=ffffff&line=ffffff&point=ffffff&area=true&hide_border=false" width="100%"/>
+<div align="center">
+  <table border="0">
+    <tr>
+      <td align="center">
+        <img src="https://nirzak-streak-stats.vercel.app/?user=dip-bash&theme=dark&background=000000&hide_border=false&sideNums=ffffff&currStreakNum=ffffff&fire=ffffff&ring=ffffff&stroke=ffffff&currStreakLabel=ffffff" height="170px" />
+      </td>
+      <td align="center">
+        <img src="https://github-readme-activity-graph.vercel.app/graph?username=dip-bash&bg_color=000000&color=ffffff&line=ffffff&point=ffffff&area=true&hide_border=false" height="170px" />
+      </td>
+    </tr>
+  </table>
+</div>
 
 </div>
