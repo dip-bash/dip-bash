@@ -29,7 +29,6 @@
 <p align="center">
    🎓 <em><b> Studying at Omdayal Group of Institutions </b></em> <br/>
    💻 <em><b> CSE Final Year Student </b></em><br/>
-   📚 <em><b> Hobby: Reading Books </b></em><br/>
 </p>
 
 <br/>
