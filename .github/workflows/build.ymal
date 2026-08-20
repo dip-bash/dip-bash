@@ -1,0 +1,43 @@
+name: README build
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    # Runs every day at 12:00 AM Midnight IST (18:30 UTC)
+    - cron: "30 18 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Required to allow the workflow to push updates to your repo
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies directly
+        run: pip install requests python-dateutil
+
+      - name: Update README file
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          USER_NAME: ${{ secrets.USER_NAME }}
+        run: python today.py
+
+      - name: Commit and Push
+        run: |-
+          git add README.md cache/
+          git config --global user.email "github-actions-bot@dip-bash.github.io"
+          git config --global user.name "github-actions-bot"
+          git commit -m "Updated GitHub stats" || echo "No changes to commit"
+          git push
