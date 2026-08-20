@@ -462,18 +462,8 @@ def generate_markdown(
     content = f"""
 <table>
   <tr>
-    <td width="30%" valign="top">
-
-### Hi, I'm [Saumyadip](https://saumyadip.in) 👋
-
-DevOps & Systems Engineer specializing in Linux infrastructure, system automation, and high-performance backend systems.
-
-*  Working on **CLI tools** & **local LLM automation**
-*  automated CI/CD pipelines, 
-*  Building native, lightweight, and efficient tools
-
-    </td>
-    <td width="70%" valign="top">
+    <td width="60%" valign="top">
+    
 ```yaml
  {USER_NAME} -------------------------------------------------------------------
 . OS: .............................................. Linux[Debian, Nix, Arch]
@@ -497,6 +487,9 @@ DevOps & Systems Engineer specializing in Linux infrastructure, system automatio
 . Commits: ...................................... {commit_data} | Followers: ........ {follower_data}
 . Lines of Code on GitHub: ........................ {loc_data[2]} ({loc_data[0]}++, {loc_data[1]}--)
 ```
+</td>
+<td width="40%" valign="center" align="center">
+  <img src="./animation/ani3.gif "width="296" height="456" alt="Saumyadip Banner" />
 </td>
 """
 

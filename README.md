@@ -1,18 +1,8 @@
 
 <table>
   <tr>
-    <td width="30%" valign="top">
-
-### Hi, I'm [Saumyadip](https://saumyadip.in) 👋
-
-DevOps & Systems Engineer specializing in Linux infrastructure, system automation, and high-performance backend systems.
-
-*  Working on **CLI tools** & **local LLM automation**
-*  automated CI/CD pipelines, 
-*  Building native, lightweight, and efficient tools
-
-    </td>
-    <td width="70%" valign="top">
+    <td width="60%" valign="top">
+    
 ```yaml
  dip-bash -------------------------------------------------------------------
 . OS: .............................................. Linux[Debian, Nix, Arch]
@@ -33,7 +23,10 @@ DevOps & Systems Engineer specializing in Linux infrastructure, system automatio
 
  GitHub Stats ---------------------------------------------------------------
 . Repos: ....................... 19 {Contributed: 19} | Stars: ............ 0
-. Commits: ...................................... 361 | Followers: ........ 4
-. Lines of Code on GitHub: ........................ 9,482 (12,566++, 3,084--)
+. Commits: ...................................... 362 | Followers: ........ 4
+. Lines of Code on GitHub: ........................ 9,515 (12,605++, 3,090--)
 ```
+</td>
+<td width="40%" valign="center" align="center">
+  <img src="./animation/ani3.gif "width="296" height="456" alt="Saumyadip Banner" />
 </td>
