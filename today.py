@@ -459,7 +459,22 @@ def generate_markdown(
     """
     Generates a terminal-formatted YAML code block and writes it to a Markdown file.
     """
-    content = f"""```yaml
+    content = f"""
+<table>
+  <tr>
+    <td width="30%" valign="top">
+
+### Hi, I'm [Saumyadip](https://saumyadip.in) 👋
+
+DevOps & Systems Engineer specializing in Linux infrastructure, system automation, and high-performance backend systems.
+
+*  Working on **CLI tools** & **local LLM automation**
+*  automated CI/CD pipelines, 
+*  Building native, lightweight, and efficient tools
+
+    </td>
+    <td width="70%" valign="top">
+```yaml
  {USER_NAME} -------------------------------------------------------------------
 . OS: .............................................. Linux[Debian, Nix, Arch]
 . Uptime: ......................................... {age_data}
@@ -481,7 +496,9 @@ def generate_markdown(
 . Repos: ....................... {repo_data} {{Contributed: {contrib_data}}} | Stars: ............ {star_data}
 . Commits: ...................................... {commit_data} | Followers: ........ {follower_data}
 . Lines of Code on GitHub: ........................ {loc_data[2]} ({loc_data[0]}++, {loc_data[1]}--)
-```"""
+```
+</td>
+"""
 
     with open(filename, "w", encoding="utf-8") as f:
         f.write(content)
