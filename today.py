@@ -24,7 +24,7 @@ def daily_readme(birthday):
     e.g. 'XX years, XX months, XX days'
     """
     diff = relativedelta.relativedelta(datetime.datetime.today(), birthday)
-    return "{} {}, {} {}, {} {}{}".format(
+    return "{} {}, {:02d} {}, {:02d} {}{}".format(
         diff.years,
         "year" + format_plural(diff.years),
         diff.months,
