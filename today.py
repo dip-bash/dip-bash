@@ -460,37 +460,30 @@ def generate_markdown(
     Generates a terminal-formatted YAML code block and writes it to a Markdown file.
     """
     content = f"""
-<table>
-  <tr>
-    <td width="60%" valign="top">
     
 ```yaml
- {USER_NAME} -------------------------------------------------------------------
-. OS: .............................................. Linux[Debian, Nix, Arch]
-. Uptime: ......................................... {age_data}
-. Editor: ............................................. Neovim, Helix, VScode
-
-. Languages.Programming: ..................................... Golang, Python
-. Database.Tools: ................................ SQLite3, Supabase, MongoDB
-. DevOps.Tools: ..................... Docker, Nginx, GitHub Action, Terraform
-. Cloud.Tools: ................................... AWS[EC2, S3, RDS, IAM ...]
-
-. Hobbies.Software: .... Try And Make Opensource Tools[CLI], Make Novel Games
-
- Contact --------------------------------------------------------------------
-. Email.Work: .................................... saumyadip.social@gmail.com
-. Linkedin.Work: .......................................... saumyadipjana2003
-. Porfolio.Work: ............................................... saumyadip.in
-
- GitHub Stats ---------------------------------------------------------------
-. Repos: ....................... {repo_data} {{Contributed: {contrib_data}}} | Stars: ............ {star_data}
-. Commits: ...................................... {commit_data} | Followers: ........ {follower_data}
-. Lines of Code on GitHub: ........................ {loc_data[2]} ({loc_data[0]}++, {loc_data[1]}--)
+ {USER_NAME} -------------------------------------------------------------------  #::::::::::----===@*````````````
+. OS: .............................................. Linux[Debian, Nix, Arch]  #:--+#%@@@%%%#+===%-````````````
+. Uptime: ......................................... {age_data}  #=+*##*+====+*#%%%#-````````````
+. Editor: ............................................. Neovim, Helix, VScode  ##%#+*+#%%+#*++#%%#+:```````````
+                                                                               #-%*====++++++==%***-```````````
+. Languages.Programming: ..................................... Golang, Python  #-+#=-----------@*+*=```````````
+. Database.Tools: ................................ SQLite3, Supabase, MongoDB  #-=**----------#=#+-````````````
+. DevOps.Tools: ..................... Docker, Nginx, GitHub Action, Terraform  #---=*+=-:--=+*==#=`````````````
+. Cloud.Tools: ................................... AWS[EC2, S3, RDS, IAM ...]  #++++==-------====:`````````````
+                                                                               #%%*=---:::---==*+``````````````
+. Hobbies.Software: .... Try And Make Opensource Tools[CLI], Make Novel Games  #%%%%%%*=----===````````````````
+                                                                               #++*###%%=--===+````````````````
+ Contact --------------------------------------------------------------------  #-------=-===+=`````````````````
+. Email.Work: .................................... saumyadip.social@gmail.com  #*+-----==+++-``````````````````
+. Linkedin.Work: .......................................... saumyadipjana2003  #-----==++*#:```````````````````
+. Porfolio.Work: ............................................... saumyadip.in  ##*+++*%***%#-``````````````````
+                                                                               #@%@@@%*++*%##=`````````````````
+ GitHub Stats ---------------------------------------------------------------  #@@@#*+++*@%%##%%##=````````````
+. Repos: ....................... {repo_data} {{Contributed: {contrib_data}}} | Stars: ............ {star_data}  #***+++++########%%%%%=--:``````
+. Commits: ...................................... {commit_data} | Followers: ........ {follower_data}  #+++++++####**####%%%%#######+==
+. Lines of Code on GitHub: ........................ {loc_data[2]} ({loc_data[0]}++, {loc_data[1]}--)  #=====+*##*****####%%%%#########
 ```
-</td>
-<td width="40%" valign="center" align="center">
-  <img src="./animation/ani3.gif "width="296" height="456" alt="Saumyadip Banner" />
-</td>
 """
 
     with open(filename, "w", encoding="utf-8") as f:
