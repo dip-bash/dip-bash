@@ -618,24 +618,17 @@ if __name__ == "__main__":
         total_loc[:-1],
     )
 
-    print(
-        "\033[F\033[F\033[F\033[F\033[F\033[F\033[F\033[F",
-        "{:<21}".format("Total function time:"),
-        "{:>11}".format(
-            "%.4f"
-            % (
-                user_time
-                + age_time
-                + loc_time
-                + commit_time
-                + star_time
-                + repo_time
-                + contrib_time
-            )
-        ),
-        " s \033[E\033[E\033[E\033[E\033[E\033[E\033[E\033[E",
-        sep="",
+    total_time = (
+        user_time
+        + age_time
+        + loc_time
+        + commit_time
+        + star_time
+        + repo_time
+        + contrib_time
+        + follower_time
     )
+    print(f"Total function time: {total_time:.4f} s")
 
     print("Total GitHub GraphQL API calls:", "{:>3}".format(sum(QUERY_COUNT.values())))
     for funct_name, count in QUERY_COUNT.items():
