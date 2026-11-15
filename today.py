@@ -84,8 +84,14 @@ def graph_commits(start_date, end_date):
 
 def graph_repos_stars(count_type, owner_affiliation, cursor=None, add_loc=0, del_loc=0):
     """
-    Uses GitHub's GraphQL v4 API to return my total repository, star, or lines of code count.
+    Returns repository or star totals for repositories owned by the user.
+
+    The REST endpoint exposes the same public repository totals shown on the
+    user's GitHub profile and avoids incomplete GraphQL stargazer responses.
     """
+    if count_type in {"repos", "stars"} and owner_affiliation == ["OWNER"]:
+        return rest_owned_repository_count(count_type)
+
     query_count("graph_repos_stars")
     query = """
     query ($owner_affiliation: [RepositoryAffiliation], $login: String!, $cursor: String) {
@@ -122,6 +128,46 @@ def graph_repos_stars(count_type, owner_affiliation, cursor=None, add_loc=0, del
             return stars_counter(
                 request.json()["data"]["user"]["repositories"]["edges"]
             )
+
+
+def rest_owned_repository_count(count_type):
+    """
+    Return a count from all public repositories owned by the user.
+    """
+    repositories = []
+    page = 1
+
+    while True:
+        response = requests.get(
+            f"https://api.github.com/users/{USER_NAME}/repos",
+            params={"type": "owner", "per_page": 100, "page": page},
+            headers=HEADERS,
+        )
+        if response.status_code != 200:
+            raise Exception(
+                "rest_owned_repository_count has failed with a",
+                response.status_code,
+                response.text,
+                QUERY_COUNT,
+            )
+
+        page_repositories = response.json()
+        if not isinstance(page_repositories, list):
+            raise Exception(
+                "rest_owned_repository_count returned an invalid response",
+                page_repositories,
+            )
+
+        repositories.extend(page_repositories)
+        if len(page_repositories) < 100:
+            break
+        page += 1
+
+    if count_type == "repos":
+        return len(repositories)
+    if count_type == "stars":
+        return sum(repository.get("stargazers_count", 0) for repository in repositories)
+    raise ValueError(f"Unsupported repository count type: {count_type}")
 
 
 def recursive_loc(
